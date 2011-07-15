@@ -97,3 +97,31 @@ exports.should_complex_event_machine_run_ok = function(t){
 	step++;
 	e.emit('ev3');
 }
+exports.should_procedure_fin_works_fine = function(t){
+	var e = em.create();
+	var step = 0;
+	e.set(function($e, fin){
+		if ($e.ev1){
+			step++;
+			fin();
+		}
+	});
+	e.emit('ev1', 1);
+	setTimeout(function(){
+		t.equal(1, step, 'just run one time');
+		t.done();
+	}, 100);
+}
+exports.should_event_clear_works_fine = function(t) {
+	var e = em.create();
+	e.set(function($e){
+		if (($e.ev1 || $e.ev2) && $e.ev3){
+			t.equal(false, $e.ev1, 'ev1 clear');
+			t.done();
+		}
+	});
+	e.emit('ev1');
+	e.clearEvent('ev1');
+	e.emit('ev2');
+	e.emit('ev3');
+}
