@@ -32,7 +32,7 @@ exports.should_analyze_event_name_in_proc_ok = function(t) {
 		name = [];
 	var f1 = function(){$e.ev1};
 	e.setProcedure(f1);
-	t.deepEqual({'ev1':[0]}, e.relate, 'one event procedure');
+	t.deepEqual({'ev1':[0]}, e.bind, 'one event procedure');
 
 	var f2 = function(){
 		if ($e.ev1 && $e.ev2) {
@@ -41,7 +41,7 @@ exports.should_analyze_event_name_in_proc_ok = function(t) {
 		return false;
 	};
 	e.setProcedure(f2);
-	t.deepEqual({'ev1':[0,1], 'ev2':[1]}, e.relate, 'two events procedure');
+	t.deepEqual({'ev1':[0,1], 'ev2':[1]}, e.bind, 'two events procedure');
 
 	var f3 = function() {
 		if ($e.ev1 && $e.ev2) {
@@ -52,7 +52,7 @@ exports.should_analyze_event_name_in_proc_ok = function(t) {
 		return false;
 	}
 	e.setProcedure(f3);
-	t.deepEqual({'ev1':[0,1,2], 'ev2':[1,2], 'ev3' : [2]}, e.relate,
+	t.deepEqual({'ev1':[0,1,2], 'ev2':[1,2], 'ev3' : [2]}, e.bind,
 		'duplicate events procedure');
 
 	t.done();
