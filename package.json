@@ -5,7 +5,7 @@
 	"keywords": ["event", "event machine"],
 	"description": "A simple event machine for node",
 	"author": "q3boy <q3boy1@gmail.com>",
-	"contributors": [	],
+	"contributors": [],
 	"repository": {
 		"type" : "git",
 		"url" : "git://github.com/q3boy/node-event-machine.git"
