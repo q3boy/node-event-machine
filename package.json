@@ -1,0 +1,24 @@
+{
+	"name": "node-event-machine",
+	"main": "./lib/event_machine.js",
+	"version": "0.0.1-pre",
+	"keywords": ["event", "event machine"],
+	"description": "A simple event machine for node",
+	"author": "q3boy <q3boy1@gmail.com>",
+	"contributors": [	],
+	"repository": {
+		"type" : "git",
+		"url" : "git://github.com/q3boy/node-event-machine.git"
+	},
+	"homepage": "http://github.com/q3boy/node-event-machine",
+	"directories": {
+		"lib": "./lib",
+		"doc": "./doc"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"nodeunit": ">=0.5.1"
+	},
+	"engines": [ "node >=0.4.0" ],
+	"license": "BSD"
+}
